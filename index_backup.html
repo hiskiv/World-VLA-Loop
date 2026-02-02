@@ -77,8 +77,8 @@
   <title>World-VLA-Loop: Closed-Loop Learning of Video World Model and VLA Policy - Xiaokang Liu et al. | Academic Research</title>
   
   <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/jpeg" href="figures/avatar.jpeg">
-  <link rel="apple-touch-icon" href="figures/avatar.jpeg">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -320,15 +320,17 @@
                 <div class="content">
                     <div class="level-set has-text-justified">
                         <p>
-                            World-VLA-Loop framework consists of four phases.
+                            Our hypothesis is that probing methods, when done right, hold significant potential. Drawing inspiration
+                            from binary code analysis, where dynamic approaches are more common than static ones, we believe that
+                            running neural networks, i.e., probing, is a promising approach for weight
+                            space learning. We begin with 2 preliminary experiments to test the quality and potential of probing
+                            approaches:
                         <ol>
-                            <li>Curate success and near-success dataset (SANS) mainly via manual teleoperation. Few demonstrations are needed.
+                            <li>Comparing a vanilla probing baseline to previous graph based and mechanistic approaches. With enough probes: (a) vanilla probing performs better than graph approaches
+                                that does not use probing. (b) Graph approaches become equivalent to probing only when they also use probing features.
                             </li>
-                            <li>Fine-tune the action-conditioned world model on SANS dataset with joint reward and video supervision.</li>
-                            <li>Execute VLA policy rollouts within the world model and perform RL (GRPO) optimization.</li>
-                            <li>Deploy the refined policy in real-world. And in real-world deployment, new rollouts could be used to collect new failure and success data for further SANS dataset augmentation, which can be used to iteratively improve the world model and policy.</li>
+                            <li>Comparing learned probes and probes from randomly selected data. We show that synthetic probes are equally effective as latent optimized ones.</li>
                         </ol>
-                        This cycle enables the joint optimization of the world model and the VLA policy, iteratively enhancing both performance.
                         </p>
                     </div>
                 </div>
@@ -342,15 +344,21 @@
 <section class="hero is-small">
     <div class="hero-body">
         <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-two-thirds">
-                    <div class="item">
-                        <!-- Your image here -->
-                        <img src="figures/framework.png" alt="A table comparing probing to previous approaches"/>
-                        <h2 class="subtitle has-text-centered">
-                            <em><b>Full pipeline of our proposed framework.</b></em> 
-                        </h2>
-                    </div>
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="static/images/graph_vs_probing__space.png" alt="A table comparing probing to previous approaches"/>
+                    <h2 class="subtitle has-text-centered">
+                        <em><b>Vanilla Probing vs. Other Approaches.</b></em> Comparing a vanilla probing approach with previous
+                        graph based and mechanistic approaches (numbers of probes in brackets).
+                    </h2>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="static/images/synthetic_data_space.png" alt="Comparing synthetic data to learnt probes"/>
+                    <h2 class="subtitle has-text-centered">
+                        <em><b>Latent Optimized Probes vs. Synthetic Data as Probes.</b></em> Comparing learned probes and probes from randomly selected data.
+                    </h2>
                 </div>
             </div>
         </div>
@@ -440,6 +448,125 @@
         </div>
     </div>
 </section>
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- TODO: Replace with your research result images -->
+        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        <!-- TODO: Replace with description of this result -->
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+      <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <!-- TODO: Replace with your YouTube video ID -->
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <!-- TODO: Replace with your poster PDF -->
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
 
 
 
